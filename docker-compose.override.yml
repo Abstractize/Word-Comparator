@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+    client:
+        environment:
+            - REST_URL=https://server:port/api/
+    server:
+        environment:
+            - MY_ENV_VAR=server
