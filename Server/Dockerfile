@@ -1,9 +1,18 @@
-FROM gcc:4.9
-# Copy 
-COPY . /usr/src/
-# cd 
-WORKDIR /usr/src/
+FROM rikorose/gcc-cmake as builder
 
-RUN gcc -o myapp main.c
+RUN apt install libulfius-dev uwsc
 
-CMD ["./myapp"]
+COPY . /usr/src/app
+
+WORKDIR /usr/src/app
+
+RUN cmake .
+RUN cmake --build ./
+
+FROM ubuntu:latest AS runtime
+
+COPY --from=builder /usr/src/app/Server /usr/src/app/
+
+WORKDIR /usr/src/app
+
+CMD ["./Server"]

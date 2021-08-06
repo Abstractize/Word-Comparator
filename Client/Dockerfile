@@ -1,9 +1,16 @@
-FROM gcc:4.9
-# Copy 
-COPY . /usr/src/
-# cd 
-WORKDIR /usr/src/
+FROM rikorose/gcc-cmake as builder
 
-RUN gcc -o myapp main.c
+COPY . /usr/src/app
 
-CMD ["./myapp"]
+WORKDIR /usr/src/app
+
+RUN cmake .
+RUN cmake --build ./
+
+FROM ubuntu:latest AS runtime
+
+COPY --from=builder /usr/src/app/Client /usr/src/app/
+
+WORKDIR /usr/src/app
+
+CMD ["./Client"]

@@ -8,9 +8,3 @@ services:
     build:
       context: Client
       dockerfile: Dockerfile
-  server:
-    image: tareita_server:latest
-    # Build
-    build:
-      context: Server
-      dockerfile: Dockerfile

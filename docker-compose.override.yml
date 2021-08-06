@@ -5,5 +5,7 @@ services:
         environment:
             - REST_URL=https://server:port/api/
     server:
-        environment:
-            - MY_ENV_VAR=server
+        image: tareita_server:latest
+        build:
+            context: Server
+            dockerfile: Dockerfile
