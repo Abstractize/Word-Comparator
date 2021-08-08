@@ -3,9 +3,13 @@ version: '3.7'
 services:
     client:
         environment:
-            - REST_URL=https://server:port/api/
+            - REST_URL=http://server:8080/
     server:
         image: tareita_server:latest
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
         build:
             context: Server
             dockerfile: Dockerfile
+        ports: 
+            - 8080:8080

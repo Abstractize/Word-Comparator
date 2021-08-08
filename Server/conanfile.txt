@@ -1,5 +1,0 @@
-[requires]
-uwsc
-
-[generators]
-cmake

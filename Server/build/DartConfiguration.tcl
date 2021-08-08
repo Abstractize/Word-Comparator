@@ -4,17 +4,17 @@
 
 
 # Configuration directories and files
-SourceDirectory: C:/Users/gabab/Documents/Universidad/Operativos/Tarea 1/Server
-BuildDirectory: C:/Users/gabab/Documents/Universidad/Operativos/Tarea 1/Server/build
+SourceDirectory: /Users/abstractize/Documents/Universidad/Operativos/Word-Comparator/Server
+BuildDirectory: /Users/abstractize/Documents/Universidad/Operativos/Word-Comparator/Server/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: DESKTOP-HV89IBH
+Site: Gabriels-MacBook-Pro.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Win32-mingw32-make
+BuildName: Darwin-c++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -26,8 +26,8 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "C:/msys64/mingw64/bin/cmake.exe" "C:/Users/gabab/Documents/Universidad/Operativos/Tarea 1/Server"
-MakeCommand: C:/msys64/mingw64/bin/cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+ConfigureCommand: "/usr/local/Cellar/cmake/3.19.6/bin/cmake" "/Users/abstractize/Documents/Universidad/Operativos/Word-Comparator/Server"
+MakeCommand: /usr/local/Cellar/cmake/3.19.6/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -35,22 +35,22 @@ UpdateVersionOnly:
 
 # CVS options
 # Default is "-d -P -A"
-CVSCommand: 
-CVSUpdateOptions: 
+CVSCommand: CVSCOMMAND-NOTFOUND
+CVSUpdateOptions: -d -A -P
 
 # Subversion options
-SVNCommand: 
+SVNCommand: SVNCOMMAND-NOTFOUND
 SVNOptions: 
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: 
+GITCommand: /usr/local/bin/git
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
 
 # Perforce options
-P4Command: 
+P4Command: P4COMMAND-NOTFOUND
 P4Client: 
 P4Options: 
 P4UpdateOptions: 
@@ -62,8 +62,8 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: C:/msys64/mingw64/bin/g++.exe
-CompilerVersion: 10.3.0
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
+CompilerVersion: 12.0.5.12050022
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 
@@ -80,8 +80,12 @@ MemoryCheckCommandOptions:
 MemoryCheckSuppressionFile: 
 
 # Coverage
-CoverageCommand: C:/msys64/mingw64/bin/gcov.exe
+CoverageCommand: /usr/bin/gcov
 CoverageExtraFlags: -l
+
+# Cluster commands
+SlurmBatchCommand: SLURM_SBATCH_COMMAND-NOTFOUND
+SlurmRunCommand: SLURM_SRUN_COMMAND-NOTFOUND
 
 # Testing options
 # TimeOut is the amount of time in seconds to wait for processes
