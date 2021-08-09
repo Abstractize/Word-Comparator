@@ -10,6 +10,8 @@ int main(int argc, char *argv[])
     CURL *curl;
     CURLcode res;
 
+    printf("Connects to API URL: %s\n",url);
+
     curl_global_init(CURL_GLOBAL_ALL);
 
     curl = curl_easy_init();
