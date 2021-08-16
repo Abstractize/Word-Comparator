@@ -6,7 +6,7 @@
 
 int main(void)
 {
-  while (true)
+  while (1)
   {
     struct _u_instance instance;
 
