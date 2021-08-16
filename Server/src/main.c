@@ -29,7 +29,7 @@ int main(void)
     else
     {
       fprintf(stderr, "Error starting framework\n");
-      fprintf(stderr, "%i\n", ulfius_start_framework(&instance));
+      fprintf(stderr, "Error code: %i\n", ulfius_start_framework(&instance));
     }
     printf("End framework\n");
 
