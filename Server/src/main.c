@@ -6,35 +6,34 @@
 
 int main(void)
 {
-  while (1)
+
+  struct _u_instance instance;
+
+  // Initialize instance with the port number
+  if (ulfius_init_instance(&instance, PORT, NULL, NULL) != U_OK)
   {
-    struct _u_instance instance;
-
-    // Initialize instance with the port number
-    if (ulfius_init_instance(&instance, PORT, NULL, NULL) != U_OK)
-    {
-      fprintf(stderr, "Error ulfius_init_instance, abort\n");
-      return (1);
-    }
-
-    // Endpoint list declaration
-    add_routes(&instance);
-
-    // Start the framework
-    if (ulfius_start_framework(&instance) == U_OK)
-    {
-      printf("Start framework on port %d\n", instance.port);
-      getchar();
-    }
-    else
-    {
-      fprintf(stderr, "Error starting framework\n");
-      fprintf(stderr, "Error code: %i\n", ulfius_start_framework(&instance));
-    }
-    printf("End framework\n");
-
-    ulfius_stop_framework(&instance);
-    ulfius_clean_instance(&instance);
+    fprintf(stderr, "Error ulfius_init_instance, abort\n");
+    return (1);
   }
+
+  // Endpoint list declaration
+  add_routes(&instance);
+
+  // Start the framework
+  if (ulfius_start_framework(&instance) == U_OK)
+  {
+    printf("Start framework on port %d\n", instance.port);
+    getchar();
+  }
+  else
+  {
+    fprintf(stderr, "Error starting framework\n");
+    fprintf(stderr, "Error code: %i\n", ulfius_start_framework(&instance));
+  }
+  printf("End framework\n");
+
+  ulfius_stop_framework(&instance);
+  ulfius_clean_instance(&instance);
+
   return 0;
 }
