@@ -1,13 +1,13 @@
 [Unit]
 Description=VM Server
-After=network.target rot13.socket
-Requires=rot13.socket
+After=network.target
 
 [Service]
-Type=exec
+Type=forking
 User=Abstractize
 ExecStart=/home/Abstractize/vmserver/Server
 TimeoutStopSec=5
+NonBlocking=yes
 
 [Install]
 WantedBy=multi-user.target
