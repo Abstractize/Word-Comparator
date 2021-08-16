@@ -1,0 +1,11 @@
+[Unit]
+Description=Socket
+PartOf=rot13.service
+
+[Socket]
+ListenStream=0.0.0.0:8080
+Accept=no
+FreeBind=yes
+
+[Install]
+WantedBy=sockets.target

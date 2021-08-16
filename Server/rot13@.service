@@ -1,0 +1,20 @@
+[Unit]
+Description=VM Server
+After=network.target rot13.socket
+Requires=rot13.socket
+StartLimitBurst=5
+StartLimitIntervalSec=10
+
+[Service]
+Type=exec
+Restart=on-failure
+RestartSec=10
+User=Abstractize
+ExecStart=/home/Abstractize/vmserver/Server
+StandardInput=socket
+StandardError=journal
+TimeoutStopSec=5
+WorkingDirectory=/home/Abstractize/vmserver/Server
+
+[Install]
+WantedBy=multi-user.target
