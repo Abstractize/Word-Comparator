@@ -23,7 +23,6 @@ int main(void)
   if (ulfius_start_framework(&instance) == U_OK)
   {
     printf("Start framework on port %d\n", instance.port);
-    //getchar();
     while(1);
   }
   else
