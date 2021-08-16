@@ -1,0 +1,19 @@
+[Unit]
+Description=VM Server
+After=network.target
+StartLimitBurst=5
+StartLimitIntervalSec=10
+
+[Service]
+Type=exec
+Restart=on-failure
+RestartSec=10
+User=Abstractize
+ExecStart=/home/Abstractize/vmserver/Server
+StandardInput=socket
+StandardOutput=socket
+StandardError=journal
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

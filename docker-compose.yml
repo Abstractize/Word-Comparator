@@ -2,15 +2,7 @@ version: '3.7'
 
 services: 
   client:
-    # Como quiero que se llame el contenedor
     image: tareita_client:latest
-    # Build
     build:
       context: Client
-      dockerfile: Dockerfile
-  server:
-    image: tareita_server:latest
-    # Build
-    build:
-      context: Server
       dockerfile: Dockerfile
