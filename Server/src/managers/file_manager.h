@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief counts how many times word is in content
+ * @brief counts how many times word is in content, adapted from: https://stackoverflow.com/questions/32329894/word-occurrence-in-string-using-pointer
  * 
  * @param filename name of the file
  * @param content where to count

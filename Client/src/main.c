@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
-#include "Services/info_service.h"
+#include "services/info_service.h"
 
 int main(int argc, char *argv[])
 {
