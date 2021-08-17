@@ -8,8 +8,8 @@ add_executable(Server
     src/main.c
     src/API/routes.h
     src/API/routes.c
-    src/API/hello_world_controller.h
-    src/API/hello_world_controller.c
+    src/API/file_controller.h
+    src/API/file_controller.c
     )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

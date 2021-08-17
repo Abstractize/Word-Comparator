@@ -6,10 +6,10 @@ enable_testing()
 
 add_executable(Client 
     src/main.c
-    src/Controller/controller.h
-    src/Controller/controller.c
-    src/Controller/hello_world_controller.h
-    src/Controller/hello_world_controller.c
+    src/Services/service.h
+    src/Services/service.c
+    src/Services/info_service.h
+    src/Services/info_service.c
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

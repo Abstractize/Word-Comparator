@@ -2,24 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
-#include "controller.h"
+#include "service.h"
 
-CURLcode get_hello_world(CURL *curl, char *url)
-{
-  printf("Getting on: %s\n", url);
-  CURLcode res;
-  CURLcode value;
-  char *ct;
-  curl_easy_setopt(curl, CURLOPT_URL, url);
-
-  res = curl_easy_perform(curl);
-  //value = curl_easy_getinfo(curl, CURLINFO_DATA_OUT, &ct);
-
-  check_response(res);
-  return res;
-}
-
-CURLcode post_hello_world(CURL *curl, char *url)
+CURLcode post_info(CURL *curl, char *url)
 {
   printf("Posting: %s\n", url);
   CURLcode res;
@@ -31,8 +16,12 @@ CURLcode post_hello_world(CURL *curl, char *url)
   form = curl_mime_init(curl);
 
   field = curl_mime_addpart(form);
-  curl_mime_name(field, "id");
-  curl_mime_data(field, "Hello World!", CURL_ZERO_TERMINATED);
+  curl_mime_name(field, "file");
+  curl_mime_data(field, "Hello World! Hello other World!", CURL_ZERO_TERMINATED);
+
+  field = curl_mime_addpart(form);
+  curl_mime_name(field, "word");
+  curl_mime_data(field, "Hello", CURL_ZERO_TERMINATED);
 
   headerlist = curl_slist_append(headerlist, buf);
   

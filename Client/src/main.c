@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
-#include "Controller/hello_world_controller.h"
+#include "Services/info_service.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,8 +17,7 @@ int main(int argc, char *argv[])
     curl = curl_easy_init();
     if (curl)
     {
-        get_hello_world(curl, url);
-        post_hello_world(curl, url);
+        post_info(curl, url);
     }
     return 0;
 }

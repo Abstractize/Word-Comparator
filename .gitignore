@@ -159,3 +159,5 @@ Server/build/yder-src/
 OperativosTarea1Server_key.pem
 
 *.pem
+
+TestData/
