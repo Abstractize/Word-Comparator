@@ -16,8 +16,12 @@ CURLcode post_info(CURL *curl, char *url)
   form = curl_mime_init(curl);
 
   field = curl_mime_addpart(form);
+  curl_mime_name(field, "filename");
+  curl_mime_data(field, "hello.txt", CURL_ZERO_TERMINATED);
+
+  field = curl_mime_addpart(form);
   curl_mime_name(field, "file");
-  curl_mime_data(field, "Hello World! Hello other World!", CURL_ZERO_TERMINATED);
+  curl_mime_data(field, "Hello World! Hello other World! Hello World Again!", CURL_ZERO_TERMINATED);
 
   field = curl_mime_addpart(form);
   curl_mime_name(field, "word");
