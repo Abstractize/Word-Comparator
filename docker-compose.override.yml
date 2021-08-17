@@ -13,3 +13,5 @@ services:
             dockerfile: Dockerfile
         ports: 
             - 8080:8080
+        volumes:
+            - ./Server/data:/usr/src/app/data
