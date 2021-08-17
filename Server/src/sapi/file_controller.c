@@ -1,5 +1,5 @@
 #include <ulfius.h>
-#include "../Managers/file_manager.h"
+#include "../managers/file_manager.h"
 
 int post_file_info(const struct _u_request *request, struct _u_response *response, void *user_data)
 {
@@ -14,6 +14,7 @@ int post_file_info(const struct _u_request *request, struct _u_response *respons
   printf("%s\n", word);
 
   int count = count_word(filename, content, word);
+  printf("%s is %i times in %s\n", word, count, content);
 
   return U_CALLBACK_CONTINUE;
 }

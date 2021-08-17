@@ -6,10 +6,10 @@ enable_testing()
 
 add_executable(Client 
     src/main.c
-    src/Services/service.h
-    src/Services/service.c
-    src/Services/info_service.h
-    src/Services/info_service.c
+    src/services/service.h
+    src/services/service.c
+    src/services/info_service.h
+    src/services/info_service.c
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
