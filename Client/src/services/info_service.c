@@ -33,8 +33,8 @@ CURLcode post_info(CURL *curl, char *url)
   curl_easy_setopt(curl, CURLOPT_MIMEPOST, form);
 
   res = curl_easy_perform(curl);
-  check_response(res);
 
+  check_response(res);
 
   curl_easy_cleanup(curl);
   curl_mime_free(form);

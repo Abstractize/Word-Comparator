@@ -16,5 +16,9 @@ int post_file_info(const struct _u_request *request, struct _u_response *respons
   int count = count_word(filename, content, word);
   printf("%s is %i times in %s\n", word, count, content);
 
+  const char *response_body;
+  sprintf(response_body, "%i\n", count);
+  ulfius_set_string_body_response(response, 200, response_body);
+
   return U_CALLBACK_CONTINUE;
 }
