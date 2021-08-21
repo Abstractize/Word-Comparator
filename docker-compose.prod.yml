@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+    client:
+        ports: 
+            - 8081:8080
+        environment:
+            - REST_URL=http://operativos.centralus.cloudapp.azure.com:8080/
+        volumes:
+            - ./TestData/:/usr/src/app/data

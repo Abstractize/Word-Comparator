@@ -3,7 +3,7 @@ Description=VM Server
 After=network.target
 
 [Service]
-Type=forking
+Type=simple
 User=Abstractize
 ExecStart=/home/Abstractize/vmserver/Server
 TimeoutStopSec=5
