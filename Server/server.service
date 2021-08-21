@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User=Abstractize
-ExecStart=/home/Abstractize/vmserver/Server
+ExecStart=sudo /home/Abstractize/vmserver/Server
 TimeoutStopSec=5
 NonBlocking=yes
 
