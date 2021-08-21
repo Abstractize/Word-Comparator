@@ -3,8 +3,7 @@ Description=VM Server
 After=network.target
 
 [Service]
-Type=exec
-Restart=always
+Type=simple
 User=root
 ExecStart=/home/Abstractize/vmserver/Server
 TimeoutStopSec=5
