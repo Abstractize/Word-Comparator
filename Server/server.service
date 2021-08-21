@@ -3,9 +3,10 @@ Description=VM Server
 After=network.target
 
 [Service]
-Type=simple
-User=Abstractize
-ExecStart=sudo /home/Abstractize/vmserver/Server
+Type=exec
+Restart=always
+User=root
+ExecStart=/home/Abstractize/vmserver/Server
 TimeoutStopSec=5
 NonBlocking=yes
 
