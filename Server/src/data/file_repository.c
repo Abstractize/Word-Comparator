@@ -13,6 +13,4 @@ void create_file(const char *filename, const char *content)
     fp = fopen(direction, "w+");
     fprintf(fp, content);
     fclose(fp);
-
-    // Send file for ssh
 }

@@ -2,7 +2,7 @@
 
 int count_word(const char *filename, const char *content, const char *word)
 {
-    //create_file(filename, content);
+    create_file(filename, content);
 
     int counter = 0;
 
