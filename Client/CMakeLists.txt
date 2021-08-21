@@ -14,6 +14,7 @@ add_executable(Client
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+set(OUTPUT_NAME index)
 include(CPack)
 
 target_link_libraries(${PROJECT_NAME} curl)

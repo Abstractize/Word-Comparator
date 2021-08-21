@@ -2,8 +2,12 @@ version: '3.7'
 
 services:
     client:
+        ports: 
+            - 8081:8080
         environment:
             - REST_URL=http://server:8080/
+        volumes:
+            - ./TestData/:/usr/src/app/data
     server:
         image: tareita_server:latest
         stdin_open: true # docker run -i
