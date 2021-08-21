@@ -19,11 +19,12 @@ int main(int argc, char *argv[])
     curl_global_init(CURL_GLOBAL_ALL);
 
     curl = curl_easy_init();
-    if (curl)
+    bool run = true;
+    while (run)
     {
-        bool run = true;
-        while (run)
+        if (curl)
         {
+
             char filename[MAX];
             printf("Please enter the filename: \n");
             scanf("%s", filename);
@@ -36,16 +37,30 @@ int main(int argc, char *argv[])
 
             char *response = post_info(curl, url, filename, word);
             printf("Number of times the word %s is in %s: %s\n\n", word, filename, response);
-        
-            char end;
-            printf("If you want to end the process please press 'f', otherwise press another key to continue. \n");
-            scanf("%c", &end);
-            if(end == 'f')
+            free(response);
+
+            printf("If you want to end the process please press 'f' and enter, otherwise press only enter to continue.\n");
+
+
+            char end[1];
+            scanf("%s", end);
+            if(end[0] == 'f')
             {
                 printf("Program Closed.\n");
                 run = false;
             }
+            printf("\n");
+
         }
     }
+    curl_easy_cleanup(curl);   
     return 0;
+}
+
+void clean_stdin(void)
+{
+    int c;
+    do {
+        c = getchar();
+    } while (c != '\n' && c != EOF);
 }

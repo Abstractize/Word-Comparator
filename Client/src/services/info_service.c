@@ -67,7 +67,6 @@ char *post_info(CURL *curl, char *url, char *filename, char *word)
 
   check_response(res);
 
-  curl_easy_cleanup(curl);
   curl_mime_free(form);
   curl_slist_free_all(headerlist);
 

@@ -25,15 +25,7 @@ WORKDIR /usr/src/app/
 RUN /usr/bin/cmake/bin/cmake . && /usr/bin/cmake/bin/cmake --build ./
 
 ### RUN ###
-FROM ubuntu/apache2 AS runtime
-# Dependencies
-RUN apt-get update && apt-get install -y \
-    # runtime libraries
-    libcurl4-gnutls-dev \
-    wget \
-    build-essential
-
-EXPOSE 20
+FROM base AS runtime
 
 COPY --from=builder /usr/src/app/Client /usr/src/app/
 

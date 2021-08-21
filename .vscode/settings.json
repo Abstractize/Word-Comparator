@@ -2,6 +2,7 @@
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
         "file_manager.h": "c",
-        "file_repository.h": "c"
+        "file_repository.h": "c",
+        "conio.h": "c"
     }
 }
