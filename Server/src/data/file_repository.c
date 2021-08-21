@@ -21,6 +21,7 @@ void create_file(const char *filename, const char *content)
     free(direction);
     if (fp == NULL)
     {
+        printf("Not found directory, creating...")
         mkdir(path, 0700);
         FILE *fp = fopen(direction, "w+");
         if (fp == NULL)
