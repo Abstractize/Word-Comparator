@@ -13,7 +13,4 @@ void create_file(const char *filename, const char *content)
     fp = fopen("./data.txt", "w+");
     fprintf(fp, content);
     fclose(fp);
-    //free(direction);
-    free(fp);
-    //free(path);
 }
