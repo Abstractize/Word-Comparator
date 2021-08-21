@@ -41,8 +41,10 @@ int main(int argc, char *argv[])
             printf("If you want to end the process please press 'f', otherwise press another key to continue. \n");
             scanf("%c", &end);
             if(end == 'f')
-            printf("Program Closed.\n");
+            {
+                printf("Program Closed.\n");
                 run = false;
+            }
         }
     }
     return 0;
