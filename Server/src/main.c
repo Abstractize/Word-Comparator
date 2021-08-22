@@ -22,11 +22,13 @@ int main(void)
     printf("Start framework on port %d\n", instance.port);
     while(1);
   }
+
   else
   {
     fprintf(stderr, "Error starting framework\n");
     fprintf(stderr, "Error code: %i\n", ulfius_start_framework(&instance));
   }
+  
   printf("End framework\n");
 
   ulfius_stop_framework(&instance);

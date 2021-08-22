@@ -27,8 +27,6 @@ RUN /usr/bin/cmake/bin/cmake . && /usr/bin/cmake/bin/cmake --build ./
 ### RUN ###
 FROM base AS runtime
 
-EXPOSE 8080
-
 COPY --from=builder /usr/src/app/Client /usr/src/app/
 
 WORKDIR /usr/src/app
